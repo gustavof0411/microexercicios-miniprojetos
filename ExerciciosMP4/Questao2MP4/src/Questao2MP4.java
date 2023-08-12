@@ -19,13 +19,16 @@ public class Questao2MP4 {
                 System.out.println("[REMOÇÃO - \"" + pessoas.getListaDeNomes().get(
                         pessoas.getListaDeNomes().size() - 1) + "\"]");
                 pessoas.removerNome();
-            } else if (pessoas.getListaDeNomes().size() == 0 && nome.equalsIgnoreCase("remover")) {
-                // Não faz nada. (Essa condição aqui não tem pra que existir)
-            } else if (!nome.equalsIgnoreCase("")) {
+                System.out.print("Digite o nome:");
+                nome = scanner.nextLine();
+            } else if (!nome.equalsIgnoreCase("") && !nome.equalsIgnoreCase("remover")) {
                 pessoas.adicionarNome(nome);
+                System.out.print("Digite o nome:");
+                nome = scanner.nextLine();
+            } else {
+                System.out.print("Digite o nome:");
+                nome = scanner.nextLine();
             }
-            System.out.print("Digite o nome:");
-            nome = scanner.nextLine();
         }
 
         // Exibindo os nomes da lista
